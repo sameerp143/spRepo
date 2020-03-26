@@ -7,7 +7,11 @@ const CountryList = () => {
     return (
 
         <select className="country">
-            <option value="AF">Afghanistan</option>
+
+            <option value="BG">GB</option>
+            <option value="PL">POLAND</option>
+
+            {/* <option value="AF">Afghanistan</option>
             <option value="AX">Åland Islands</option>
             <option value="AL">Albania</option>
             <option value="DZ">Algeria</option>
@@ -255,7 +259,7 @@ const CountryList = () => {
             <option value="EH">Western Sahara</option>
             <option value="YE">Yemen</option>
             <option value="ZM">Zambia</option>
-            <option value="ZW">Zimbabwe</option>
+            <option value="ZW">Zimbabwe</option> */}
         </select>
     )
 

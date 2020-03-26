@@ -6,25 +6,30 @@
     margin-bottom: 2%;
     margin-top: 3%;
 }
+.row1-stlye{
+   background: cornflowerblue;
+   padding-top: 35px;
+   padding-bottom: 35px;
+   margin-top: 0px !important;
+}
 
 .row1-stlye{
     margin-bottom: 2%;
     margin-top: 3%;
-    margin-right: -11%;
-    margin-left: -7%;
+    margin-right: -13%;
+    margin-left: -11%;
 
 }
 
-input[type='checkbox'] { 
+input[type='radio'] { 
     width:30px;
     height:20px;
-
  }
 
-
-.col-stlye{
-    margin-left: -38px;
-}
+ input[type='checkbox'] { 
+    width:30px;
+    height:20px;
+ }
 
 .country{
     width: 50%;
