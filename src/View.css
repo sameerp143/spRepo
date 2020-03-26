@@ -1,0 +1,31 @@
+.lable{
+    /* font-size: 10px; */
+    font-weight: bold;
+} 
+.row-stlye{
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+
+.row1-stlye{
+    margin-bottom: 2%;
+    margin-top: 3%;
+    margin-right: -11%;
+    margin-left: -7%;
+
+}
+
+input[type='checkbox'] { 
+    width:30px;
+    height:20px;
+
+ }
+
+
+.col-stlye{
+    margin-left: -38px;
+}
+
+.country{
+    width: 50%;
+}
