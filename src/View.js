@@ -31,249 +31,253 @@ class View extends React.Component {
         // else
         var ageTotal = year + " Year - " + month + " Month";
         return ageTotal;
-
     }
 
     render() {
 
         return (
-            <div className="container" >
-                <div className="row row1-stlye">
-                    <div className="col-7" >
-                        <div className="row">
-                            <div className="col-3">
-                                <label className="lable">Instrument ID </label><br />
-                                <span>1001</span>
-                            </div>
-                            <div className="col-3">
-                                <label className="lable">Instrument name</label><br />
-                                <span>Covida</span>
-                            </div>
-                            <div className="col-3">
-                                <label className="lable">Instrument Family</label><br />
-                                <span>Health</span>
-                            </div>
-                            <div className="col-3">
-                                <label className="lable">Manufactured Date</label><br />
-                                <span id="mdate" >2019-02-20</span>
-                            </div>
+            <div className="" >
+                <div className="container-fluid mb-2 div1" >
+                    <div className="row text-center">
+                        <div className="col">
+                            <label>Instrument ID</label>
+                            <p>1001</p>
                         </div>
-                    </div>
-                    <div className="col-5">
-                        <div className="row">
-                            <div className="col-4">
-                                <label className="lable">Age</label><br />
-                                <span>{this.ageCalculate()}</span>
-                            </div>
-                            <div className="col-4">
-                                <label className="lable">Serial Number</label><br />
-                                <span>ID-007</span>
-                            </div>
-                            <div className="col-4">
-                                <label className="lable">Finance Site</label><br />
-                                <span>www.ABC.com</span>
-                            </div>
+                        <div className="col">
+                            <label>Instrument Name</label>
+                            <p>CVD-14</p>
+                        </div>
+                        <div className="col">
+                            <label>Instrument Family</label>
+                            <p>Health</p>
+                        </div>
+                        <div className="col">
+                            <label>Manufactured Date</label>
+                            <p>2019-02-20</p>
+                        </div>
+                        <div className="col">
+                            <label>Age</label>
+                            <p>{this.ageCalculate()}</p>
+                        </div>
+                        <div className="col">
+                            <label>Serial Number</label>
+                            <p>ID-007</p>
+                        </div>
+                        <div className="col">
+                            <label>Finance Site</label>
+                            <p>www.ABC.com</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="row row-stlye ">
-                    <div className="col-4">
-                        <label className="lable">Display Nmae</label>&nbsp;&nbsp;
-                    <input className="th2" type="text" name="display" defaultValue="DISPALY-1" />
+
+                <div className="container">
+                    <div className="formWrap text-left">
+                        <form>
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="">Display Name</label>
+                                    <input type="text" className="form-control" defaultValue="Display-1" id="" placeholder="" />
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="">Description</label>
+                                    <textarea className="form-control" id="" rows="3"></textarea>
+                                </div>
+                                <div className="form-group col-md-4">
+                                    <label for="inputState">Type</label>
+                                    <select id="inputState" className="form-control">
+                                        <option selected value="Instrument">Instrument</option>
+                                        <option value="Accessory">Accessory</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="inputState">Classification</label>
+                                    <select id="classificaion" className="form-control">
+                                        <option selected value="Shippable Demo Instrument">Shippable Demo Instrument</option>
+                                        <option value="On-site Demo Instrumen">On-site Demo Instrument</option>
+                                        <option value="Shippable Demo Instrument">On-site PKI-used Instrument</option>
+                                        <option value="On-site Demo Instrumen">Rental Instrument</option>
+
+                                        <option value="Loan Instrument">Loan Instrument</option>
+                                        <option value="On-site Demo Instrumen">Collaboration-Site Instrument</option>
+                                        <option value="Shippable Demo Instrument">Return Instrument</option>
+                                        <option value="On-site Demo Instrumen">Under maintenance or repair Instrument</option>
+
+                                        <option value="Loan Instrument">Customer Instrument</option>
+                                        <option value="On-site Demo Instrumen">Scrapped Instrument</option>
+                                    </select>
+                                </div>
+                                <div className="form-group col-md-4">
+                                    <label className="form-check-label" for="gridCheck">Installation Require</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input className="form-check-input" type="checkbox" id="gridCheck" />
+
+                                </div>
+                                <div className="form-group col-md-4">
+                                    <label for="inputState">Booking Buffer</label>
+                                    <select id="inputState" className="form-control">
+                                        <option selected value="3">3</option>
+                                        <option value="5">5</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="inputState">Home Location</label>
+                                    <select id="country" className="form-control">
+                                        <option value="BG">GB</option>
+                                        <option value="PL">POLAND</option>
+                                    </select>
+                                </div>
+                                <div className="form-group col-md-4">
+                                    <label for="">&nbsp;</label>
+                                    <input type="text" className="form-control" id="" placeholder="Detail Location" />
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-12">
+
+                                    <div>
+                                        <label for="Moveable">Movable Asset</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="yes" name="Moveable" value="Bike" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     </div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="no" name="Moveable" value="Bike" checked />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>No</span>&nbsp;&nbsp;
+                                     </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-12">
+                                    <label for="Layer">Layer Of Perameter</label>
+                                    <div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Layer" checked />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Super-Teritory</span>
+                                        </div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="customRadioInline2" name="Layer" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {/* <label className="custom-control-label" for="Layer">Globle-Teritory</label> */}
+                                            <span>Globle-Teritory</span>
+                                        </div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Layer" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Teritory</span>
+                                            {/* <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="Layer">Teritory</label> */}
+                                        </div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Layer" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Sub-Teritory</span>
+                                            {/* <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline1">Sub-Teritory</label> */}
+                                        </div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Layer" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Country</span>
+                                            {/* <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline1">Country</label> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-12">
+                                    <label for="Bookable">Conditiont</label>
+                                    <div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Bookable" checked />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Bookable</span>
+                                            {/* <input type="radio" id="customRadioInline1" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline1">Bookable</label> */}
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Bookable" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Not-Bookable</span>
+                                            {/* <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline2">Not-Bookable</label> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group col-md-12">
+                                    <label for="Scalable">Movable Asset</label>
+                                    <div>
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Scalable" checked />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Scalable</span>
+                                            {/* <input type="radio" id="customRadioInline1" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline1">radio</label> */}
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Scalable" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>Not-Scalable</span>
+                                            {/* <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline2">radio</label> */}
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div className="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="" name="Scalable" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>To-Be-Scrapped</span>
+                                            {/* <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
+                                            <label className="custom-control-label" for="customRadioInline2">radio</label> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="">Condition Coments</label>
+                                    <textarea className="form-control" id="" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="">Usage Coments</label>
+                                    <textarea className="form-control" id="" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-4">
+                                    <label for="">File Upload</label>
+                                    <input type="file" className="form-control" id="file" onChange={this.myChangeHandler} multiple />
+                                </div>
+                            </div>
+
+                           
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mx-auto w-50 p-3 text-center">
+                                        <button id="" className="btn-sm btn-warning">CANCLE</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button id="" className="btn-sm btn-primary"> SAVE </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
-
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-1">
-                        <label className="lable" id="w3mission">Discription</label>
-                    </div>
-                    <div className="col-2">
-                        <textarea id="w3mission" row row-stlyes="4" cols="30" />
-                    </div>
-
-                    <div className="col-6">
-                        <label className="lable" for="type">Type</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select id="type">
-                            <option selected value="Instrument">Instrument</option>
-                            <option value="Accessory">Accessory</option>
-                        </select>
-                    </div>
-                </div>
-
-                {/* end */}
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-5">
-                        <label className="lable" for="classificaion">Classificaion</label>&nbsp;&nbsp;
-                        <select id="classificaion">
-                            <option selected value="Shippable Demo Instrument">Shippable Demo Instrument</option>
-                            <option  value="On-site Demo Instrumen">On-site Demo Instrument</option>
-                            <option  value="Shippable Demo Instrument">On-site PKI-used Instrument</option>
-                            <option  value="On-site Demo Instrumen">Rental Instrument</option>
-
-                            <option  value="Loan Instrument">Loan Instrument</option>
-                            <option  value="On-site Demo Instrumen">Collaboration-Site Instrument</option>
-                            <option  value="Shippable Demo Instrument">Return Instrument</option>
-                            <option  value="On-site Demo Instrumen">Under maintenance or repair Instrument</option>
-
-                            <option  value="Loan Instrument">Customer Instrument</option>
-                            <option  value="On-site Demo Instrumen">Scrapped Instrument</option>
-                        </select>
-                    </div>
-
-                    <div className="col-3">
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />&nbsp;&nbsp;
-                        <label className="lable" for="classificaion">Installation Require</label>
-                    </div>
-
-                    <div className="col-3">
-                        <label className="lable" for="classificaion">Booking Buffer</label>&nbsp;&nbsp;
-                        <select id="classificaion">
-                            <option selected value="3">3</option>
-                            <option value="5">5</option>
-                            <option value="7">7</option>
-                        </select>
-                    </div>
-                    <div className="col-3"></div>
-                </div>
-                {/* end */}
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-3 ">
-                        <label className="lable" for="classificaion">Home Location</label>&nbsp;&nbsp;
-                        <CountryList />
-                    </div>
-
-
-                    {/* <div className="col-1">
-                        <label className="lable" id="w3mission">Detail Location</label>&nbsp;&nbsp;
-                        </div> */}
-                    <div className="col-2">
-                        <input type="taxt" id="Detail" placeholder="Detail Location" />
-                    </div>
-                </div>
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-3">
-                        <label className="lable" for="Moveable">Moveable Asset</label>&nbsp;&nbsp;
-                        
-                    </div>
-                    <div className="col-1">
-                        <input type="radio" id="vehicle1" name="Moveable" value="Bike" />
-                        <span>Yes</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-1">
-                        <input type="radio" id="vehicle1" name="Moveable" value="Bike" checked/>
-                        <span>No</span>&nbsp;&nbsp;
-                    </div>
-                </div>
-
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-2">
-                        <label className="lable" for="classificaion">Layer Of Perameter</label>&nbsp;&nbsp;
-                                      </div>
-
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="vehicle1" value="Bike" checked/>
-                        <span>Super-Teritory</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="vehicle1" value="Bike" />
-
-                        <span>Globle-Teritory</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="vehicle1" value="Bike" />
-
-                        <span>Teritory</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="vehicle1" value="Bike" />
-                        <span>Sub-Teritory</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="vehicle1" value="Bike" />
-                        <span>Country</span>&nbsp;&nbsp;
-                    </div>
-                </div>
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-2">
-                        <label className="lable" for="classificaion">Condition</label>
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="classificaion" name="classificaion" value="Bike" checked/>
-                        <span>Bookable</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="classificaion" name="classificaion" value="Bike" />
-                        <span>Not-Bookable</span>&nbsp;&nbsp;
-                    </div>
-                </div>
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-2">
-                        <label className="lable" for="Scalable">Scalable</label>
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="Scalable" value="Bike" checked/>
-                        <span>Scalable</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-2">
-                        <input type="radio" id="vehicle1" name="Scalable" value="Bike" />
-                        <span>Not-Scalable</span>&nbsp;&nbsp;
-                    </div>
-                    <div className="col-3">
-                        <input type="radio" id="vehicle1" name="Scalable" value="Bike" />
-                        <span>To-Be-Scrapped</span>&nbsp;&nbsp;
-                    </div>
-                </div>
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-2">
-                        <label className="lable" id="w3mission">Condition Coments</label>&nbsp;&nbsp;
-                        </div>
-                    <div className="col-2">
-                        <textarea id="w3mission" row row-stlyes="4" cols="30" />
-                    </div>
-                </div>
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-2">
-                        <label className="lable" id="w3mission">Usage Coments</label>&nbsp;&nbsp;
-                        </div>
-                    <div className="col-2">
-                        <textarea id="w3mission" row row-stlyes="4" cols="30" />
-                    </div>
-                </div>
-                <hr />
-                <div className="row row-stlye">
-                    <div className="col-2">
-                        <label className="lable" id="w3mission">File Upload</label>&nbsp;&nbsp;
-                        </div>
-                    <div className="col-3">
-                        <input type="file" id="file" onChange={this.myChangeHandler} multiple />
-                    </div>
-                    <div className="col-1">
-                        {/* <span className="><i id="addfile" class="fa fa-plus-circle" aria-hidden="true"></i></span> */}
-                    </div>
-
-                </div>
-                <br /><br />
-
-                <div>
-                <button id="" className="btn-sm btn-warning">CANCLE</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button id="" className="btn-sm btn-primary"> SAVE </button>
-                </div>
-         
-
-                <br /><br />
-
             </div>
-            // end    
 
 
 
