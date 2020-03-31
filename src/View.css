@@ -16,8 +16,24 @@
 .div1{
     background:#ccc;
 }
+input[type='text'] {
+    width: 78%;
+  }
+.display{
+    display: inline-flex;
+}
+.classificaion{
+    width: 68%;
+    margin-right: -7%;
+    margin-left: -3%;
+}
+.tab {
+    margin-left: 6.5em
+   }
 
-
+label{
+    font-weight: 500;
+}
 
  input[type='radio'] {
     -webkit-appearance:none;

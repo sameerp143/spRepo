@@ -2,12 +2,23 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './View.css';
 import $ from 'jquery';
-import CountryList from './CountryList';
+import Autocomplete from './Autocomplete';
+import './Autocomplete.css';
 class View extends React.Component {
     constructor(props) {
         super(props);
 
     }
+
+    newSuggestions = [
+        "Alligator",
+        "Bask",
+        "Crocodilian",
+        "Death Roll",
+        "Eggs"
+    ];
+
+
 
     myChangeHandler = (event) => {
         if ($("#file")[0].files.length > 2) {
@@ -114,8 +125,8 @@ class View extends React.Component {
                                     </select>
                                 </div>
                                 <div className="form-group col-md-4">
-                                    <label className="form-check-label" for="gridCheck">Installation Require</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input className="form-check-input" type="checkbox" id="gridCheck" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input className="form-check-input" type="checkbox" id="gridCheck" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label className="form-check-label" for="gridCheck">Installation Require</label>
 
                                 </div>
                                 <div className="form-group col-md-4">
@@ -133,14 +144,20 @@ class View extends React.Component {
                             <div className="form-row">
                                 <div className="form-group col-md-4">
                                     <label for="inputState">Home Location</label>
-                                    <select id="country" className="form-control">
-                                        <option value="BG">GB</option>
+                                    <select id="country" className="form-control" >
+                                        <option selected value="BG">GB</option>
                                         <option value="PL">POLAND</option>
                                     </select>
                                 </div>
+
                                 <div className="form-group col-md-4">
                                     <label for="">&nbsp;</label>
-                                    <input type="text" className="form-control" id="" placeholder="Detail Location" />
+                                    <div className="">
+
+                                        <Autocomplete/>
+
+                                    </div>
+                                    {/* <input type="text" className="form-control" id="" placeholder="Detail Location" /> */}
                                 </div>
                             </div>
 
@@ -264,7 +281,7 @@ class View extends React.Component {
                                 </div>
                             </div>
 
-                           
+
                             <div class="row">
                                 <div class="col">
                                     <div class="mx-auto w-50 p-3 text-center">
