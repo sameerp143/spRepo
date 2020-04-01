@@ -25,10 +25,10 @@ body {
     border-top-width: 0;
     list-style: none;
     margin-top: 0;
-    max-height: 143px;
+    max-height: 240px;
     overflow-y: auto;
     padding-left: 0;
-    width: 77%;
+    width: 76%;
   }
   
   .suggestions li {
@@ -42,6 +42,6 @@ body {
   }
   
   .suggestions li:not(:last-of-type) {
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #dee2e6;
   }
   

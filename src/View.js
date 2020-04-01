@@ -4,32 +4,69 @@ import './View.css';
 import $ from 'jquery';
 import Autocomplete from './Autocomplete';
 import './Autocomplete.css';
+
 class View extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            selectedSuggestions: [
+                "Llantrisant Business Park, Unit A Llantrisant CF72 8YW",
+                "49 Featherstone Street, LONDON EC1Y 8SY",
+                "61 Wellfield Road, Roath Cardiff CF24 3DG",
+                "3 Edgar Buildings, George Street Bath England BA1 2FJ"
+            ],
 
-    }
-
-    newSuggestions = [
-        "Alligator",
-        "Bask",
-        "Crocodilian",
-        "Death Roll",
-        "Eggs"
-    ];
-
-
-
-    myChangeHandler = (event) => {
-        if ($("#file")[0].files.length > 2) {
-            alert("You can select only 2 file");
-        } else {
-            alert("file added ..");
+            detailLocation: ""
         }
     }
 
+    myinputChangeHandler = (event) => {
+        this.setState({ username: event.target.value });
+    }
+
+    callbackFunction = (childData) => {
+        this.setState({ detailLocation: childData })
+    }
+
+    countrylocationinfo = [
+        {
+            code: "GB",
+            name: [
+                "Llantrisant Business Park, Unit A Llantrisant CF72 8YW",
+                "49 Featherstone Street, LONDON EC1Y 8SY",
+                "61 Wellfield Road, Roath Cardiff CF24 3DG",
+                "3 Edgar Buildings, George Street Bath England BA1 2FJ"
+            ]
+        },
+
+        {
+            code: "PL",
+            name: [
+                "Bora-Komorowskiego, 25B 31-476 Krakow",
+                "Zwycięstwa 23, 44-100 Gliwice",
+                "Woloska 5, Taurus Building 02-675 Warszawa",
+                "Bosmanska 1, 81-116 Gdynia",
+                "Malachowskiego 2, 00-940 Warszawa"
+            ]
+        },
+
+    ];
+
+    setLocation = (event) => {
+
+        let val = document.getElementById("country").value;
+
+        this.countrylocationinfo.map((item, i) => {
+            if (item.code == val) {
+                this.setState({
+                    selectedSuggestions: item.name
+                })
+            }
+        })       
+    }
+
     ageCalculate = (event) => {
-        var d = new Date("2019-02-20");
+        var d = new Date("2019-01-20");
         var DOB = new Date(d);
         var today = new Date();
         var age = today.getTime() - DOB.getTime();
@@ -37,10 +74,11 @@ class View extends React.Component {
         var year = elapsed.getYear() - 70;
         var month = elapsed.getMonth();
         var day = elapsed.getDay();
-        // if(year == 0)
-        // var ageTotal = month + " Month";
-        // else
-        var ageTotal = year + " Year - " + month + " Month";
+        var ageTotal = 0;
+        if (year == 0)
+            ageTotal = month + " Month";
+        else
+            ageTotal = year + " Year - " + month + " Month";
         return ageTotal;
     }
 
@@ -80,7 +118,6 @@ class View extends React.Component {
                         </div>
                     </div>
                 </div>
-
 
                 <div className="container">
                     <div className="formWrap text-left">
@@ -124,7 +161,7 @@ class View extends React.Component {
                                         <option value="On-site Demo Instrumen">Scrapped Instrument</option>
                                     </select>
                                 </div>
-                                <div className="form-group col-md-4">
+                                <div className="form-group col-md-4"><br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input className="form-check-input" type="checkbox" id="gridCheck" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <label className="form-check-label" for="gridCheck">Installation Require</label>
 
@@ -139,13 +176,11 @@ class View extends React.Component {
                                 </div>
                             </div>
 
-
-
                             <div className="form-row">
                                 <div className="form-group col-md-4">
                                     <label for="inputState">Home Location</label>
-                                    <select id="country" className="form-control" >
-                                        <option selected value="BG">GB</option>
+                                    <select id="country" className="form-control" onChange={this.setLocation} >
+                                        <option selected value="GB">GB</option>
                                         <option value="PL">POLAND</option>
                                     </select>
                                 </div>
@@ -154,7 +189,9 @@ class View extends React.Component {
                                     <label for="">&nbsp;</label>
                                     <div className="">
 
-                                        <Autocomplete/>
+                                        <Autocomplete
+                                            parentCallback={this.callbackFunction}
+                                            suggestions={this.state.selectedSuggestions} />
 
                                     </div>
                                     {/* <input type="text" className="form-control" id="" placeholder="Detail Location" /> */}
@@ -190,8 +227,8 @@ class View extends React.Component {
                                         </div>
                                         <div className="custom-control custom-radio custom-control-inline">
                                             <input type="radio" id="customRadioInline2" name="Layer" />&nbsp;&nbsp;&nbsp;&nbsp;
-                                            {/* <label className="custom-control-label" for="Layer">Globle-Teritory</label> */}
-                                            <span>Globle-Teritory</span>
+                                            {/* <label className="custom-control-label" for="Layer">Global-Teritory</label> */}
+                                            <span>Global-Teritory</span>
                                         </div>
                                         <div className="custom-control custom-radio custom-control-inline">
                                             <input type="radio" id="" name="Layer" />&nbsp;&nbsp;&nbsp;&nbsp;
@@ -281,12 +318,11 @@ class View extends React.Component {
                                 </div>
                             </div>
 
-
                             <div class="row">
                                 <div class="col">
                                     <div class="mx-auto w-50 p-3 text-center">
                                         <button id="" className="btn-sm btn-warning">CANCLE</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button id="" className="btn-sm btn-primary"> SAVE </button>
+                                        <button id="" className="btn-sm btn-primary" onClick={this.saveData}> SAVE </button>
                                     </div>
                                 </div>
                             </div>
@@ -295,10 +331,26 @@ class View extends React.Component {
                     </div>
                 </div>
             </div>
-
-
-
         )
     }
+
+    saveData=()=>{
+      if($("#detailLocation").val() == "")  
+      {
+        $("#detailLocation").addClass("is-invalid");
+      }
+    }
+
+    myChangeHandler = (event) => {
+        // alert(event.target.files[0].name);
+        if ($("#file")[0].files.length > 2) {
+            alert("You can select only 2 file");
+        } else {
+
+            alert("File added..");
+        }
+    }
+
+
 }
 export default View;

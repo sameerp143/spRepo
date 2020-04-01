@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
+
+import $ from 'jquery';
 
 class Autocomplete extends React.Component {
-  
+
   constructor(props) {
     super(props);
 
@@ -20,26 +21,8 @@ class Autocomplete extends React.Component {
 
   onChange = e => {
 
-    let { suggestions } = [];
-    let val = document.getElementById("country").value;
-        if (val == 'PL') {
-          suggestions = [
-                "Reptile",
-                "Solitary",
-                "Tail",
-                "Wetlands",
-                "Jaws"
-            ];
-        }else{
-          suggestions = ["Alligator",
-            "Bask",
-            "Crocodilian",
-            "Death Roll",
-            "Eggs",         
-        ];
-        }
-        
-    // const { suggestions } = this.props;
+
+    const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
 
     // Filter our suggestions that don't contain the user's input
@@ -63,11 +46,13 @@ class Autocomplete extends React.Component {
       showSuggestions: false,
       userInput: e.currentTarget.innerText
     });
+    this.sendData();
   };
 
   onKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = this.state;
-
+    $("#detailLocation").removeClass("is-invalid");
+    
     // User pressed the enter key
     if (e.keyCode === 13) {
       this.setState({
@@ -93,6 +78,10 @@ class Autocomplete extends React.Component {
       this.setState({ activeSuggestion: activeSuggestion + 1 });
     }
   };
+
+  sendData = () => {
+    this.props.parentCallback(this.state.userInput);
+  }
 
   render() {
     const {
@@ -142,14 +131,19 @@ class Autocomplete extends React.Component {
       // <Fragment>
       <div >
         <input
-        className="form-control"
+          className="form-control"
+          required
+          id="detailLocation"
           type="text"
+          autocomplete="off"
           placeholder="Detail Location"
           onChange={onChange}
           onKeyDown={onKeyDown}
           value={userInput}
         />
-       {suggestionsListComponent} </div>
+        {/* <div class="invalid-feedback">Please fill out this field.</div>
+        <div class="valid-feedback">Please fill out this field.</div> */}
+        {suggestionsListComponent} </div>
       /* </Fragment> */
     );
   }
